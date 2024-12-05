@@ -2,6 +2,7 @@ import tkinter as tk
 from time import *
 import locale
 
+#Delet localtime
 
 locale.setlocale(locale.LC_TIME, 'deu_deu') 
 
@@ -39,6 +40,7 @@ weekday_label.pack()
 
 update_time()
 
+#fullscreen is broken on rp nano
 root.attributes('-fullscreen', True)
 
 root.overrideredirect(True)
