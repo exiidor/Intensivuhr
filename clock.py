@@ -1,10 +1,8 @@
 import tkinter as tk
 from time import *
-import locale
+import locale 
 
-#Delet localtime
-
-locale.setlocale(locale.LC_TIME, 'deu_deu') 
+locale.setlocale(locale.LC_TIME, 'de_DE.UTF-8')
 
 def update_time():
     current_time = strftime('%H:%M')
@@ -16,6 +14,7 @@ def update_time():
     root.after(1000, update_time)
 
 root = tk.Tk()
+root.config(cursor="none")
 root.title("Digital Clock")
 root["bg"] = "black"
 
@@ -43,6 +42,6 @@ update_time()
 #fullscreen is broken on rp nano
 root.attributes('-fullscreen', True)
 
-root.overrideredirect(True)
+#root.overrideredirect(True)
 
 root.mainloop()
