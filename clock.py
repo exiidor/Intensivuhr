@@ -59,7 +59,6 @@ weekday_label.pack()
 
 update_time()
 
-#fullscreen is broken on rp nano
 root.attributes('-fullscreen', True)
 
 #root.overrideredirect(True)
