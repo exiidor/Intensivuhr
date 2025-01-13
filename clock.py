@@ -34,6 +34,16 @@ def color_chars():
     else:
         return "white"
 
+def update_colors():
+    bg_color = color_background()
+    char_color = color_chars()
+    root.config(bg=bg_color)
+    frame.config(bg=bg_color)
+    clock_label.config(fg=char_color, bg=bg_color)
+    date_label.config(fg=char_color, bg=bg_color)
+    weekday_label.config(fg=char_color, bg=bg_color)
+    root.after(1000, update_colors) 
+
 root = tk.Tk()
 
 root.config(cursor="none")
@@ -60,6 +70,8 @@ weekday_label = tk.Label(
 weekday_label.pack()
 
 update_time()
+
+update_colors()
 
 root.attributes('-fullscreen', True)
 
