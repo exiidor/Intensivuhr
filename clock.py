@@ -13,27 +13,47 @@ def update_time():
     date_label.config(text=current_date)
     root.after(1000, update_time)
 
+def is_daytime():
+    current_hour = int(strftime("%H"))
+    if( 6 <= current_hour < 18):
+        return True
+    else:
+        return False
+
+def color_background():
+    if(is_daytime()):
+        return "white"
+    else:
+        return "black"
+
+def color_chars():
+    if(is_daytime()):
+        return "black"
+    else:
+        return "white"
+
 root = tk.Tk()
+
 root.config(cursor="none")
 root.title("Digital Clock")
-root["bg"] = "black"
+root["bg"] = color_background()
 
-frame = tk.Frame(root, bg='black')
+frame = tk.Frame(root, bg=color_background())
 frame.pack(expand=True)  
 
 
 clock_label = tk.Label(
-    frame, font=('Helvetica', 3*100), fg='white', bg='black', anchor='center'
+    frame, font=('Helvetica', 3*100), fg=color_chars(), bg=color_background(), anchor='center'
 )
 clock_label.pack()
 
 date_label = tk.Label(
-    frame, font=('Helvetica', 4*24), fg='white', bg='black', anchor='center'
+    frame, font=('Helvetica', 4*24), fg=color_chars(), bg=color_background(), anchor='center'
 )
 date_label.pack()
 
 weekday_label = tk.Label(
-    frame, font=('Helvetica', 4*24), fg='white', bg='black', anchor='center'
+    frame, font=('Helvetica', 4*24), fg=color_chars(), bg=color_background(), anchor='center'
 )
 weekday_label.pack()
 
