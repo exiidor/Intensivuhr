@@ -3,6 +3,8 @@ from time import *
 import locale 
 
 locale.setlocale(locale.LC_TIME, 'de_DE.UTF-8')
+startDayAtHour = 8
+endDayAtHour = 18
 
 def update_time():
     current_time = strftime('%H:%M')
@@ -15,13 +17,13 @@ def update_time():
 
 def is_daytime():
     current_hour = int(strftime("%H"))
-    if( 6 <= current_hour < 18):
+    if( startDayAtHour <= current_hour < endDayAtHour):
         return True
     else:
         return False
 
 def color_background():
-    if(is_daytime()):
+    if (is_daytime()):
         return "white"
     else:
         return "black"
@@ -61,6 +63,6 @@ update_time()
 
 root.attributes('-fullscreen', True)
 
-#root.overrideredirect(True)
+#root.overrideredirect(True), not working on RPZERO
 
 root.mainloop()
