@@ -1,20 +1,44 @@
-# Delieruhr
+# Digital Clock
 
-## Konzept
+## Concept
 
-Eine Anzeige auf einem TV, mit Hilfe von einem Respberry Pie Zero W.\
-Es zeigt die Uhrzeit, Datum und Wochentag an.
+This program shows the current time, date and weekday. It's designed with a Raspberry Pie Zero in mind.
 
 
-## Bauplan
+## Schematics
 
-[Respberry Pie Zero W](https://www.berrybase.de/raspberry-pi-zero-w) : 16,5€\
-Mit Zubehör : Gehäuse, Mini HMDI Adapter, SD-Karte
+You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-w) (or newer model) and some kind of [RTC](https://www.berrybase.de/ds3231-real-time-clock-modul-fuer-raspberry-pi)-module
 
-### TO-DO
+## Features
 
-- RTC implementieren
-- Respberry Pie aufsetzten
-- Code verbessern
-- Auto Login einrichten
-- Anwendung automatisch öffnen
+- Shows time, date and weekday
+- Darkmode 
+
+
+## Setup
+
+### Hardware 
+
+1. Connect the RTC-module to your Raspberry Pie. [Video](https://www.youtube.com/watch?v=MthLLRNAGLs)
+
+### Software
+
+1. Install Raspberry Pie OS (32-bit) on a micro SD card.
+2. Set up your RCT-module [Video](https://www.youtube.com/watch?v=9aN2ocO2AWY)
+3. Copy this repository in your /home/USER directory
+4. Create a autostart directory if not present
+
+    > mkdir /home/pi/.config/autostart
+
+5. Create a .desktop file with nano
+
+    > nano /home/pi/.config/autostart/clock.desktop
+
+    Text input :
+
+    >[Desktop Entry]\
+Type=Application\
+Name=Clock\
+Exec=/usr/bin/python3 /home/pi/clock.py
+
+6. Reboot
