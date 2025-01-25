@@ -2,9 +2,11 @@ import tkinter as tk
 from time import *
 import locale 
 
+# Preference settings 
 locale.setlocale(locale.LC_TIME, 'de_DE.UTF-8')
 startDayAtHour = 8
 endDayAtHour = 18
+activateModeSwitching = False
 
 def update_time():
     current_time = strftime('%H:%M')
@@ -23,12 +25,16 @@ def is_daytime():
         return False
 
 def color_background():
+    if (not activateModeSwitching):
+        return "black"
     if (is_daytime()):
         return "white"
     else:
         return "black"
 
 def color_chars():
+    if (not activateModeSwitching):
+        return "white"
     if(is_daytime()):
         return "black"
     else:
@@ -71,7 +77,8 @@ weekday_label.pack()
 
 update_time()
 
-update_colors()
+if(activateModeSwitching): 
+    update_colors()
 
 root.attributes('-fullscreen', True)
 
