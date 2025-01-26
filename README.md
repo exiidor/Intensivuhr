@@ -4,6 +4,12 @@
 
 This program shows the current time, date and weekday. It's designed with a Raspberry Pie Zero in mind.
 
+## Preview
+
+<img src="https://github.com/user-attachments/assets/aa0791c6-98a1-4f86-838f-980aa54f1d5f" alt="image" width=45%>
+<img src="https://github.com/user-attachments/assets/4cd9ef16-899a-4a98-9059-b27137db9316" alt="image" width=45%>
+
+
 
 ## Schematics
 
