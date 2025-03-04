@@ -15,7 +15,7 @@ def update_time():
     clock_label.config(text=current_time)
     weekday_label.config(text=weekday_name)
     date_label.config(text=current_date)
-    root.after(1000, update_time)
+    root.after(10000, update_time)
 
 def is_daytime():
     current_hour = int(strftime("%H"))
