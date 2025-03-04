@@ -80,8 +80,10 @@ update_time()
 if(activateModeSwitching): 
     update_colors()
 
-root.attributes('-fullscreen', True)
-
-#root.overrideredirect(True), not working on RPZERO
+#root.attributes('-fullscreen', True) does not work on my system
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+root.geometry(f"{screen_width}x{screen_height}")
+root.overrideredirect(True)
 
 root.mainloop()
