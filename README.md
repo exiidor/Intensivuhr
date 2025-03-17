@@ -33,7 +33,7 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
 ### __Software__
 
 1. Install Raspberry Pie OS (32-bit) on a micro SD card
-2. Set up your RCT-module\
+2. Set up your RCT-module
  - Activate I2C -> `raspi-config`
  - `i2cdetect -y 1` to check for the RTC, it should show 68
  - `sudo nano /etc/modules` and add <u>rtc-ds3231</u>
