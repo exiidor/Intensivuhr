@@ -34,11 +34,11 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
 
 1. Install Raspberry Pie OS (32-bit) on a micro SD card
 2. Set up your RCT-module
- - Activate I2C -> `raspi-config`
- - `i2cdetect -y 1` to check for the RTC, it should show 68
- - `sudo nano /etc/modules` and add <u>rtc-ds3231</u>
+ -  Activate I2C -> `raspi-config`
+ -  `i2cdetect -y 1` to check for the RTC, it should show 68
+ -  `sudo nano /etc/modules` and add `rtc-ds3231`
  -  `sudo nano /boot/firmware/config.txt` and add `dtoverlay=i2c-rtc,ds3231`
- -  Run `sudo apt-get -y remove fake-hwclock`
+ -  `sudo apt-get -y remove fake-hwclock`
  -  `sudo nano /lib/udev/hwclock-set` and comment from the first `if` to first `fi`
  -  `reboot`
  -  Check if the RTC is working with `sudo hwclock -r`
