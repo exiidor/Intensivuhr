@@ -34,7 +34,15 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
 
 1. Install Raspberry Pie OS (32-bit) on a micro SD card
 2. Set up your RCT-module\
- /// [Tutorial](https://www.youtube.com/watch?v=9aN2ocO2AWY) ///
+ - Activate I2C -> `raspi-config`
+ - `i2cdetect -y 1` to check for the RTC, it should show 68
+ - `sudo nano /etc/modules` and add <u>rtc-ds3231</u>
+ -  `sudo nano /boot/firmware/config.txt` and add `dtoverlay=i2c-rtc,ds3231`
+ -  Run `sudo apt-get -y remove fake-hwclock`
+ -  `sudo nano /lib/udev/hwclock-set` and comment from the first `if` to first `fi`
+ -  `reboot`
+ -  Check if the RTC is working with `sudo hwclock -r`
+ -  And write the correct time with `sudo hwclock -w`
 3. Copy `clock.py` in your /home/USER directory
 4. Create a autostart directory (if not present) and do not use `sudo`
 
@@ -49,7 +57,7 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
     [Desktop Entry]
     Type=Application
     Name=Clock
-    Exec=/usr/bin/python3 /home/pi/clock.py
+    Exec=/usr/bin/python3 /home/pi/Intensivuhr/clock.py
     ```
 
 6. Reboot
