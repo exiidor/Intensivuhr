@@ -46,18 +46,18 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
 3. Copy `clock.py` in your /home/USER directory
 4. Create a autostart directory (if not present) and do not use `sudo`
 
-    > mkdir /home/pi/.config/autostart
+    > mkdir /home/USER/.config/autostart
 
 5. Create a .desktop file with `nano`
 
-    > nano /home/pi/.config/autostart/clock.desktop
+    > nano /home/USER/.config/autostart/clock.desktop
 
     Content :
     ```
     [Desktop Entry]
     Type=Application
     Name=Clock
-    Exec=/usr/bin/python3 /home/pi/Intensivuhr/clock.py
+    Exec=/usr/bin/python3 /home/USER/Intensivuhr/clock.py
     ```
 
 6. Reboot
