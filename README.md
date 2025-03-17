@@ -46,9 +46,9 @@ You will need a [Respberry Pie Zero](https://www.berrybase.de/raspberry-pi-zero-
 
     Content :
     ```
-    [Desktop Entry]\
-    Type=Application\
-    Name=Clock\
+    [Desktop Entry]
+    Type=Application
+    Name=Clock
     Exec=/usr/bin/python3 /home/pi/clock.py
     ```
 
